@@ -1,0 +1,40 @@
+{
+    "name": "Screenshot",
+    "version": "1.0",
+    "description": "Hello anh em, đây là ứng dụng chụp màn hình",
+    "manifest_version": 2,
+    "icons": {
+        "16": "img/icon.png",
+        "32": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+    },
+    "permissions": [
+        "activeTab", 
+        "tabs",
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_icon": {                
+            "16": "img/icon.png",
+            "32": "img/icon.png",
+            "48": "img/icon.png",
+            "128": "img/icon.png"   
+        },
+        "default_title": "Screen",  
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["js/content-script.js"]
+		}
+	],
+    "background": {
+		"scripts": [
+			"js/background.js"
+		],
+        "persistent": true
+	}
+
+}
